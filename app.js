@@ -1,6 +1,6 @@
 function loadLocalStorage() {
   let library;
-  if (localStorage.getItem("mylibrary")) {
+  if (localStorage.getItem("myLibrary")) {
     library = JSON.parse(localStorage.getItem("myLibrary"));
   } else {
     library = [];
@@ -102,7 +102,6 @@ function handleChangeRead(bookId) {
   handleUpdateBooksNumber(myLibrary);
 }
 
-const DEFAULT_DATA = [{}];
 let myLibrary = loadLocalStorage();
 
 document.getElementById("book__form").onsubmit = function (e) {
