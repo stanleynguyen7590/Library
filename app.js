@@ -67,7 +67,7 @@ function clearForm() {
   document.getElementById("pageNumInputText").value = "";
   document.getElementById("readCheck").checked = false;
 }
-// Get Data from clicking submit button
+
 document.getElementById("book__form").onsubmit = function (e) {
   e.preventDefault();
   let bookTitle = document.getElementById("titleInputText").value;
