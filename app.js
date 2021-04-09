@@ -1,5 +1,3 @@
-let myLibrary = loadLocalStorage();
-
 function loadLocalStorage() {
   let library = JSON.parse(localStorage.getItem("myLibrary"));
   renderTable(library);
@@ -68,22 +66,6 @@ function clearForm() {
   document.getElementById("readCheck").checked = false;
 }
 
-document.getElementById("book__form").onsubmit = function (e) {
-  e.preventDefault();
-  let bookTitle = document.getElementById("titleInputText").value;
-  let bookAuthor = document.getElementById("authorInputText").value;
-  let bookPageNum = document.getElementById("pageNumInputText").value;
-  let bookIsRead = document.getElementById("readCheck").checked;
-  let bookId = Math.random();
-  addBookToLibrary(
-    new Book(bookTitle, bookAuthor, bookPageNum, bookIsRead, bookId)
-  );
-  populateLocalStorage();
-  renderTable(myLibrary);
-  handleUpdateBooksNumber(myLibrary);
-  clearForm();
-};
-
 function handleDeleteAll() {
   myLibrary = [];
   populateLocalStorage();
@@ -114,6 +96,24 @@ function handleChangeRead(bookId) {
   renderTable(myLibrary);
   handleUpdateBooksNumber(myLibrary);
 }
+
+let myLibrary = loadLocalStorage();
+
+document.getElementById("book__form").onsubmit = function (e) {
+  e.preventDefault();
+  let bookTitle = document.getElementById("titleInputText").value;
+  let bookAuthor = document.getElementById("authorInputText").value;
+  let bookPageNum = document.getElementById("pageNumInputText").value;
+  let bookIsRead = document.getElementById("readCheck").checked;
+  let bookId = Math.random();
+  addBookToLibrary(
+    new Book(bookTitle, bookAuthor, bookPageNum, bookIsRead, bookId)
+  );
+  populateLocalStorage();
+  renderTable(myLibrary);
+  handleUpdateBooksNumber(myLibrary);
+  clearForm();
+};
 
 document.getElementById("delete all").onclick = function () {
   handleDeleteAll();
