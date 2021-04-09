@@ -13,13 +13,13 @@
       crossorigin="anonymous"
     />
 
-    <title>Hello, world!</title>
+    <title>Library</title>
   </head>
-  <body>
+  <body class="bg-dark">
     <div class="container-fluid">
       <div class="row align-items-start">
-        <div class="col col-4 bg-dark text-white vh-100 pt-4">
-          <form>
+        <div class="col col-4 min-vh-100 text-white pt-4">
+          <form id="book__form">
             <div class="mb-3">
               <label for="titleInputText" class="form-label">Book Title</label>
               <input
@@ -64,31 +64,36 @@
           </form>
         </div>
 
-        <div class="col col-8">
+        <div class="col col-8 bg-white min-vh-100">
           <div class="row align-items-center pt-4">
             <div class="col text-center">
               <h5>
                 <span class="badge bg-primary"
-                  >Books Read: <span class="badge bg-secondary">4</span></span
+                  >Books Read:
+                  <span class="book-read badge bg-secondary">0</span></span
                 >
               </h5>
             </div>
             <div class="col text-center">
               <h5>
                 <span class="badge bg-primary"
-                  >Books Unread: <span class="badge bg-secondary">4</span></span
+                  >Books Unread:
+                  <span class="book-unread badge bg-secondary">0</span></span
                 >
               </h5>
             </div>
             <div class="col text-center">
               <h5>
                 <span class="badge bg-primary"
-                  >Total Book: <span class="badge bg-secondary">4</span></span
+                  >Total Books:
+                  <span class="total-book badge bg-secondary">0</span></span
                 >
               </h5>
             </div>
             <div class="col text-center">
-              <button type="button" class="btn btn-danger">DELETE ALL</button>
+              <button id="delete all" type="button" class="btn btn-danger">
+                DELETE ALL
+              </button>
             </div>
           </div>
 
@@ -103,17 +108,7 @@
                   <th scope="col">Removal</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>The Hobbit</td>
-                  <td>J.R.R Tolken</td>
-                  <td>230</td>
-                  <td>READ</td>
-                  <td>
-                    <button type="button" class="btn btn-danger">DELETE</button>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
         </div>
@@ -125,5 +120,7 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
+
+    <script src="app.js"></script>
   </body>
 </html>
